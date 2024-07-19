@@ -10,4 +10,8 @@ const app = express()
  * It should respond with the simple string "pong"
  */
 
+app.get('/ping', (req, res) => {
+    res.send("pong")
+})
+
 export default app

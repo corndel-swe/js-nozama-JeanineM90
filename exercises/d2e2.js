@@ -22,6 +22,9 @@ app.get('/multiply/:x/:y', (req, res) => {
    * This endpoint responds with the product of x and y
    * e.g. /multiply/:3/:5 => 15
    */
+
+  const answer = parseInt(req.params.x) * parseInt(req.params.y)
+  res.send(answer.toString())
 })
 
 export default app

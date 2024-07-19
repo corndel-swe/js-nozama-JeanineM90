@@ -13,7 +13,15 @@ class User {
   static async findById(id) {
     /**
      * TODO: finish this method
+     * Example is:
+     * const query = `SELECT * FROM users WHERE id = ?`
+      const results = await db.raw(query, [id])
+      return results[0]
+      This fails on "does not return the user password"
      */
+    const query = `SELECT id, username, firstName, lastName, email, avatar FROM users WHERE id = ?`
+    const results = await db.raw(query, [id])
+    return results[0]
   }
 }
 
